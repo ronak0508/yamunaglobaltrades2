@@ -2085,18 +2085,41 @@ section {
   }
 }
 
+.container-custom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding: 0 2rem;
+  }
+}
+
+
 .contact-methods-grid {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  gap: 1rem;
+  margin:0 auto;
+  padding: 0 1rem;
+  max-width: 1280px; */
+  max-width: 1280px;
+  margin: 0 auto;
   padding: 0 1rem;
 }
 
 @media (min-width: 640px) {
   .contact-methods-grid {
     gap: 2rem;
-    padding: 0;
+    padding: 0 1.5rem;
   }
 }
 
