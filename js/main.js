@@ -393,3 +393,59 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('beforeunload', stopAutoPlay);
     }
 })();
+
+const flower = document.getElementById("flower");
+let rotation = 0;
+let isScrolling = false;
+let scrollTimeout;
+let autoRotateSpeed = 0.2; // speed of slow rotation
+let lastScrollY = 0;
+
+// Scroll-based rotation
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimeout);
+  isScrolling = true;
+
+  const scrollY = window.scrollY;
+  const flowerTop = flower.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  // Rotate only when visible
+  if (flowerTop < windowHeight && flowerTop > -windowHeight) {
+    rotation += (scrollY - lastScrollY) * 0.5;
+    updateFlowerRotation();
+  }
+
+  lastScrollY = scrollY;
+
+  // Stop rotation after scrolling stops
+  scrollTimeout = setTimeout(() => {
+    isScrolling = false;
+  }, 200);
+});
+
+// Continuous rotation when idle
+function animate() {
+  if (!isScrolling) {
+    const flowerTop = flower.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+    if (flowerTop < windowHeight && flowerTop > -windowHeight) {
+      rotation += autoRotateSpeed;
+      updateFlowerRotation();
+    }
+  }
+  requestAnimationFrame(animate);
+}
+animate();
+
+function updateFlowerRotation() {
+  flower.style.transform = `rotate(${rotation}deg)`;
+  const center = flower.querySelector(".center");
+  center.style.transform = `translate(-50%, -50%) rotate(${-rotation}deg)`;
+
+  const petalTexts = flower.querySelectorAll(".petal-text");
+  petalTexts.forEach((text, index) => {
+    const baseRotation = index * 60;
+    text.style.transform = `rotate(${-baseRotation - rotation}deg)`;
+  });
+}

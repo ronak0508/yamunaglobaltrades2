@@ -3210,3 +3210,194 @@ img {
         overflow: visible;
     }
 }
+
+/* 🌼 Base Styling */
+.flower-section {
+  padding: 0;
+  background: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.flower-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flower {
+  position: relative;
+  width: 800px;
+  height: 800px;
+  transition: transform 0.1s linear;
+  margin: 0 auto;
+}
+
+/* 🌸 Petal Styling */
+.petal {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  background: linear-gradient(to bottom, #ff6b9d, #c44569);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  top: 50%;
+  left: 50%;
+  transform-origin: 50% 100%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 25px;
+  transition: all 0.3s ease;
+}
+
+.petal:hover {
+  filter: brightness(1.2);
+  transform: translate(-50%, -100%) scale(1.05);
+}
+
+.petal-text {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* 🌺 Petal positions and colors */
+.petal:nth-child(1) { transform: translate(-50%, -100%) rotate(0deg); background: linear-gradient(to bottom, #ff6b9d, #c44569); }
+.petal:nth-child(1) .petal-text { transform: rotate(0deg); }
+
+.petal:nth-child(2) { transform: translate(-50%, -100%) rotate(60deg); background: linear-gradient(to bottom, #feca57, #ee5a6f); }
+.petal:nth-child(2) .petal-text { transform: rotate(-60deg); }
+
+.petal:nth-child(3) { transform: translate(-50%, -100%) rotate(120deg); background: linear-gradient(to bottom, #ff9ff3, #f368e0); }
+.petal:nth-child(3) .petal-text { transform: rotate(-120deg); }
+
+.petal:nth-child(4) { transform: translate(-50%, -100%) rotate(180deg); background: linear-gradient(to bottom, #54a0ff, #00d2d3); }
+.petal:nth-child(4) .petal-text { transform: rotate(-180deg); }
+
+.petal:nth-child(5) { transform: translate(-50%, -100%) rotate(240deg); background: linear-gradient(to bottom, #1dd1a1, #10ac84); }
+.petal:nth-child(5) .petal-text { transform: rotate(-240deg); }
+
+.petal:nth-child(6) { transform: translate(-50%, -100%) rotate(300deg); background: linear-gradient(to bottom, #ff6348, #ff4757); }
+.petal:nth-child(6) .petal-text { transform: rotate(-300deg); }
+
+/* 🌻 Center Circle */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #ffd93d 0%, #f39c12 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 6px solid #e67e22;
+}
+
+.center-text {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c3e50;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* 🌱 Content Below */
+.content {
+  padding: 120px 10%;
+  background: #222;
+  color: #f5f5f5;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.content p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* 🌿 RESPONSIVE DESIGN */
+
+/* Tablets (<=1024px) */
+@media (max-width: 1024px) {
+  .flower {
+    width: 600px;
+    height: 600px;
+  }
+  .petal {
+    width: 160px;
+    height: 240px;
+    padding: 20px;
+  }
+  .center {
+    width: 160px;
+    height: 160px;
+  }
+  .center-text {
+    font-size: 22px;
+  }
+  .petal-text {
+    font-size: 16px;
+  }
+}
+
+/* Mobile Landscape (<=768px) */
+@media (max-width: 768px) {
+  .flower {
+    width: 420px;
+    height: 420px;
+  }
+  .petal {
+    width: 110px;
+    height: 170px;
+    padding: 15px;
+  }
+  .center {
+    width: 120px;
+    height: 120px;
+  }
+  .center-text {
+    font-size: 18px;
+  }
+  .petal-text {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+}
+
+/* Mobile Portrait (<=480px) */
+@media (max-width: 480px) {
+  .flower {
+    width: 320px;
+    height: 320px;
+  }
+  .petal {
+    width: 90px;
+    height: 130px;
+    padding: 10px;
+  }
+  .center {
+    width: 90px;
+    height: 90px;
+  }
+  .center-text {
+    font-size: 14px;
+    line-height: 1.1;
+  }
+  .petal-text {
+    font-size: 10px;
+    line-height: 1.1;
+  }
+}
