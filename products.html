@@ -199,7 +199,14 @@
                         <div class="info-item">
                             <i class="fas fa-box"></i>
                             <span id="modalSize"></span>
+
                         </div>
+                        <div class="info-item">
+                            <!-- Colors beside size -->
+                            Colors:
+                            <span id="modalColors" class="color-circle"></span>
+                        </div>
+
                     </div>
 
                     <div class="product-modal-description" id="modalDescription"></div>
@@ -213,10 +220,10 @@
                             <i class="fas fa-paper-plane"></i>
                             Request a Quote
                         </a>
-                        <button class="btn btn-outline" onclick="window.print()">
+                        <!-- <button class="btn btn-outline d-none" onclick="window.print()">
                             <i class="fas fa-print"></i>
                             Print Details
-                        </button>
+                        </button> -->
                     </div>
 
                     <div class="product-modal-share">
@@ -760,6 +767,9 @@
     <!-- <script src="js/products.js"></script> -->
     <script src="js/navbar.js"></script>
     <script>
+
+      
+
         // Sample Product Data - Replace with your actual data
         const productsData = [
             {
@@ -767,9 +777,9 @@
                 title: "Single Wall Paper Cup",
                 category: "cups",
                 size: "04oz to 20oz",
-                description: "Perfect for espresso shots and small beverages. Made from high-quality food-grade paper with leak-proof design.",
+                description: "Perfect for espresso and small beverages, made using high-quality food-grade paper to ensure durability and a leak-proof experience.",
                 images: [
-                    
+
                     "assets/products/single-wall-cup1.jpg",
                     "assets/products/single-wall-1.jpeg",
                     "assets/products/single-wall-2.jpeg",
@@ -779,20 +789,25 @@
                     // "assets/products/single-wall-cup.jpg"
                 ],
                 features: [
-                    "Food-grade virgin paper",
-                    "Leak-proof PE coating",
-                    "Temperature resistant up to 90°C",
-                    "Eco-friendly and biodegradable",
-                    "Custom printing available"
+                    "Made from food-grade virgin paper",
+                    "Leak-proof PE coated interior",
+                    "Withstands temperatures up to 90°C",
+                    "Eco-friendly and biodegradable material",
+                    "Custom printing available for branding",
                 ],
-                badge: "Popular"
+
+                badge: "Popular",
+                colors: [
+                    { name: "White", value: "#ffffff" },
+                    { name: "Kraft", value: "#c49a6c" }
+                ]
             },
             {
                 id: 2,
                 title: "Double Wall Paper Cup",
                 category: "cups",
                 size: "04oz to 20oz",
-                description: "Insulated double-wall design keeps beverages hot longer while staying comfortable to hold. Ideal for coffee and tea.",
+                description: "Designed with a double-wall layer keeps drinks hotter for longer while remaining cool and comfortable to hold. Perfect for coffee, tea, and other hot beverages.",
                 images: [
                     "assets/products/double-wall-cup1.jpg",
                     "assets/products/double-wall-cup2.jpg",
@@ -803,20 +818,25 @@
                     "assets/products/double-wall-5.jpeg",
                 ],
                 features: [
-                    "Double wall insulation",
-                    "No sleeve required",
-                    "Premium quality paper",
-                    "Maintains beverage temperature",
-                    "Comfortable grip"
+                    "Double-wall insulation for superior heat retention",
+                    "No extra sleeve required",
+                    "Made from premium-quality food-grade paper",
+                    "Maintains beverage temperature effectively",
+                    "Provides a comfortable, cool-to-touch grip",
+                    "Custom printing available for branding"
                 ],
-                badge: "Best Seller"
+                badge: "Best Seller",
+                colors: [
+                    { name: "White", value: "#ffffff" },
+                    { name: "Kraft", value: "#c49a6c" }
+                ]
             },
             {
                 id: 3,
                 title: "Ripple Wall Paper Cup",
                 category: "cups",
                 size: "04oz to 20oz",
-                description: "Insulated double-wall design keeps beverages hot longer while staying comfortable to hold. Ideal for coffee and tea.",
+                description: "The ripple-layer exterior enhances heat retention and ensures a slip-free, comfortable hold. Great for all premium hot beverages.",
                 images: [
                     "assets/products/ripple-wall-cup1.jpg",
                     "assets/products/ripple-wall-1.jpeg",
@@ -826,20 +846,32 @@
                     "assets/products/ripple-wall-5.jpeg",
                 ],
                 features: [
-                    "Double wall insulation",
-                    "No sleeve required",
-                    "Premium quality paper",
-                    "Maintains beverage temperature",
-                    "Comfortable grip"
+                    "Double-wall insulation for better heat retention",
+                    "No additional sleeve required",
+                    "Made from premium-quality food-grade paper",
+                    "Maintains beverage temperature efficiently",
+                    "Comfortable, cool-to-touch grip",
+                    "Custom printing available for branding"
                 ],
-                badge: "Best Seller"
+                badge: "Best Seller",
+                colors: [
+                    { name: "White", value: "#ffffff" },
+                    { name: "Kraft", value: "#c49a6c" },
+
+                ],
+
+
+                showChessColor: true
             },
+
+
+
             {
                 id: 4,
-                title: "Paper Bowl",
+                title: "Salad Paper Bowl",
                 category: "bowls",
                 size: "200ml,250ml,350ml,500ml",
-                description: "Versatile paper bowl perfect for soups, salads, noodles, and desserts. Microwave safe and leak-resistant.",
+                description: "Our premium paper salad bowls are perfect for serving soups, fresh salads, noodles, and desserts. Designed for durability, they are microwave-safe and leak-resistant, ensuring convenience and reliability. With an elegant, eco-friendly design, they are ideal for both dining and takeaway.",
                 images: [
                     "assets/products/paper-bowl2.jpg",
                     "assets/products/salad-bowl-1.jpeg",
@@ -847,24 +879,28 @@
                     "assets/products/salad-bowl-3.jpeg",
                     "assets/products/salad-bowl-4.jpeg",
                     "assets/products/salad-bowl-5.jpeg",
-                    
-                    
+
+
                 ],
                 features: [
-                    "Microwave safe",
-                    "Oil and grease resistant",
-                    "Strong rolled rim",
-                    "Multi-purpose use",
-                    "Stackable design"
+                    "Made from premium food-grade paper for safe use",
+                    "Microwave-safe and heat-resistant for hot dishes",
+                    "Leak-resistant design to prevent spills",
+                    "Versatile for soups, salads, noodles, and desserts",
+                    "Custom printing available for branding and promotions"
                 ],
-                badge: "Eco-Friendly"
+                badge: "Eco-Friendly",
+                colors: [
+                    { name: "White", value: "#ffffff" },
+                    { name: "Kraft", value: "#c49a6c" }
+                ]
             },
             {
                 id: 5,
                 title: "Meal Paper Bowl",
                 category: "bowls",
                 size: "500ml, 750ml, 1000ml",
-                description: "Large capacity bowl ideal for Meal, pasta dishes, and catering events.",
+                description: "Our large-capacity paper meal bowls are perfect for hearty meals, pasta dishes, and catering events. Crafted for durability, they are leak-resistant and microwave-safe, ensuring convenience and reliability. With an eco-friendly design, they offer a premium serving solution for both casual dining and large-scale catering.",
                 images: [
                     "assets/products/meal-bowl-1.jpeg",
                     "assets/products/meal-bowl-2.jpeg",
@@ -874,13 +910,17 @@
 
                 ],
                 features: [
-                    "Large serving capacity",
-                    "Heavy-duty construction",
-                    "Leak-resistant coating",
-                    "Professional grade",
-                    "Ideal for catering"
+                    "Large serving capacity for meals and pasta dishes",
+                    "Heavy-duty, durable construction",
+                    "Leak-resistant coating to prevent spills",
+                    "Professional-grade design, ideal for catering events",
+                    "Custom printing available for branding and promotions"
                 ],
-                badge: "Premium"
+                badge: "Premium",
+                colors: [
+                    { name: "White", value: "#ffffff" },
+                    { name: "Kraft", value: "#c49a6c" }
+                ]
             },
             // {
             //     id: 6,
@@ -974,6 +1014,30 @@
             document.getElementById('modalCategory').textContent = product.category.charAt(0).toUpperCase() + product.category.slice(1);
             document.getElementById('modalSize').textContent = product.size;
             document.getElementById('modalDescription').textContent = product.description;
+            const modalColors = document.getElementById("modalColors");
+
+            // first two solid dots
+            const baseDots = product.colors
+                ? product.colors
+                    .map(
+                        c =>
+                            `<span class="color-dot" title="${c.name}" style="background-color:${c.value};"></span>`
+                    )
+                    .join("")
+                : "";
+
+            // only add chess dot for Ripple Wall (or any product with showChessColor)
+            const chessDot = product.showChessColor
+                ? `
+    <span class="color-dot-img" title="Chess pattern">
+      <img src="assets/chess.jpg" alt="Chess pattern">
+    </span>
+  `
+                : "";
+
+            modalColors.innerHTML = baseDots + chessDot;
+
+
 
             // Set badge
             const badge = document.getElementById('productBadge');

@@ -1223,6 +1223,41 @@ section {
   }
 }
 
+
+/* base swatch dot */
+.color-dot {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #666;
+  display: inline-block;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* circle that contains an <img> */
+.color-dot-img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #666;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.color-dot-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
 .d-none{
   display: none;
 }
